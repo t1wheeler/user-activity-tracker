@@ -1,72 +1,65 @@
 package com.mtnhub.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
  * Created by tlwheele on 2/16/2017.
  */
 @Entity
-public class Activity {
+@Table(name="activity",  schema = "activity_manager")
+@IdClass(ActivityPk.class)
+public class Activity implements Serializable {
+    @Id
+    @Column(name = "activity_id")
+    private Integer activityId;
+
+    @Basic
+    @Column(name = "photo_id")
+    private Integer photoId;
+
+    @Basic
+    @Column(name = "track_id")
+    private Integer trackId;
+
+    @Basic
+    @Column(name = "action_id")
+    private Integer actionId;
+
+    @Basic
+    @Column(name = "action_date")
+    private Date actionDate;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long activityId;
-    private long photoId;
-    private long trackId;
-    private long actionId;
-    private Date actionDate;
-    private long userId;
+    @Column(name = "user_id")
+    private Integer userId;
 
 
-    public long getActivityId() {
+    public Integer getActivityId() {
         return activityId;
     }
 
-    public void setActivityId(long activityId) {
-        this.activityId = activityId;
-    }
 
-    public long getPhotoId() {
+    public Integer getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(long photoId) {
-        this.photoId = photoId;
-    }
 
-    public long getTrackId() {
+    public Integer getTrackId() {
         return trackId;
     }
 
-    public void setTrackId(long trackId) {
-        this.trackId = trackId;
-    }
 
-    public long getActionId() {
+    public Integer getActionId() {
         return actionId;
-    }
-
-    public void setActionId(long actionId) {
-        this.actionId = actionId;
     }
 
     public Date getActionDate() {
         return actionDate;
     }
 
-    public void setActionDate(Date actionDate) {
-        this.actionDate = actionDate;
-    }
-
-    public long getUserId() {
+    public Integer getUserId() {
         return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
     }
 }
