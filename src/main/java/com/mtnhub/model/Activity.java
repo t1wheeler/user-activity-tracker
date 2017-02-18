@@ -28,12 +28,20 @@ public class Activity implements Serializable {
     private Integer actionId;
 
     @Basic
+    @Column(name = "action_name")
+    private String actionName;
+
+    @Basic
     @Column(name = "action_date")
     private Date actionDate;
 
     @Id
     @Column(name = "user_id")
     private Integer userId;
+
+    @Basic
+    @Column(name = "user_name")
+    private String userName;
 
 
     public Integer getActivityId() {
@@ -55,11 +63,19 @@ public class Activity implements Serializable {
         return actionId;
     }
 
+    public String getActionName() {
+        return actionName;
+    }
+
     public Date getActionDate() {
         return actionDate;
     }
 
     public Integer getUserId() {
         return userId;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 }

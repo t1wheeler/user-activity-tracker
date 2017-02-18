@@ -70,17 +70,18 @@ http://localhost:8080/user-activity-tracker/photo
 - Photo Endpoints that satisfy the Second Acceptance Criteria, "I should be able to make a GET request with a " type=like" query string to the endpointand have it return only likes (or comments, shares).
 ```
     Find all activities for a specific photo:           curl "http://localhost:8080/user-activity-tracker/photo/activity/photo?photoId=31"
-    Find all "Like" actions for a specific photo:       curl "http://localhost:8080/user-activity-tracker/photo/activity/type?action=1&photo=31"
-    Find all "Share" actions for a specific photo:      curl "http://localhost:8080/user-activity-tracker/photo/activity/type?action=2&photo=31"
-    Find all "Comment" actions for a specific photo:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type?action=3&photo=31"
+    Find all "Like" actions for a specific photo:       curl "http://localhost:8080/user-activity-tracker/photo/activity/type?actionId=1&photoId=31"
+    Find all "Share" actions for a specific photo:      curl "http://localhost:8080/user-activity-tracker/photo/activity/type?actionId=2&photoId=31"
+    Find all "Comment" actions for a specific photo:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type?action=3&photoId=31"
 ```
 
 
 - Photo Endpoints that satisfy the Third Acceptance Criteria, "I should be able to make a GET reque st with a " since=<integer>" query string and have it return only results since that integer (unix timestamp).
 ```
-    Find all "Like" actions for a specific photo since a specific date:     curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=1&photoId=31&date=01/17/2017"
-    Find all "Share" actions for a specific photo since a specific date:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=2&photoId=31&date=01/17/2017"
-    Find all "Comment" actions for a specific photo since a specific date:  curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=3&photoId=31&date=01/17/2017"
+    Find all "Like" actions for a specific photo since a specific date:     curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=1&photoId=31&unixDate=1484636400"
+    Find all "Share" actions for a specific photo since a specific date:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=2&photoId=31&unixDate=1484636400"
+    Find all "Comment" actions for a specific photo since a specific date:  curl "http://localhost:8080/user-activity-tracker/photo/activity/type/since?actionId=3&photoId=31&unixDate=1484636400"
+    *note - unixDate 1484636400 = 01/17/2017.  validation for date still needs to be completed
 ```
 
 
@@ -106,7 +107,8 @@ http://localhost:8080/user-activity-tracker/photo
 
 - Track Endpoints that satisfy the Third Acceptance Criteria, "I should be able to make a GET reque st with a " since=<integer>" query string and have it return only results since that integer (unix timestamp).
 ```
-    Find all "Like" actions for a specific track since a specific date:     curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?action=1&trackId=5"&date=01/17/2017"
-    Find all "Share" actions for a specific track since a specific date:    curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?actionId=2&trackId=5&date=02/11/2017"
-    Find all "Comment" actions for a specific track since a specific date:  curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?actionId=3&trackId=5&date=02/11/2016"
+    Find all "Like" actions for a specific track since a specific date:     curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?actionId=1&trackId=5&unixDate=1484636400"
+    Find all "Share" actions for a specific track since a specific date:    curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?actionId=2&trackId=5&unixDate=1486796400"
+    Find all "Comment" actions for a specific track since a specific date:  curl "http://localhost:8080/user-activity-tracker/track/activity/type/since?actionId=3&trackId=5&unixDate=1486796400"
+     *note - unixDate 1484636400 = 01/17/2017 and 1486796400 = 02/11/2017.  validation for date still needs to be completed
 ```

@@ -75,4 +75,14 @@ public class ActivityService {
         List<Activity> activityList = activityRepository.findAllByActionIdAndTrackIdAndActionDateAfter(actionId,trackId,actionDate);
         return activityList;
     }
+
+
+    // after the software was release and not in the future.
+    public static final boolean validTimestamp(String dateToValidate)  {
+        if(dateToValidate == null){
+            return false;
+        }
+        //TODO: add logic to validate passed in date is an actual unix timestamp date and check for timezone.
+        return true;
+    }
 }
