@@ -46,7 +46,13 @@ Included is sql script to create and populate a test database.
     activity-manager will now be included in your SCHEMAS list      
 ```
 
+## Clone or Download project form GitHub ##
+Import project into your IDE.  Some IDE's require you select "Import existing project"
+or "Import existing MAVEN project".
+
+
 ## Build and Run ##
+Run the project from you IDE or enter the below commands from the commandLine.
 ```
     mvn clean install
     mvn spring-boot:run
@@ -54,6 +60,7 @@ Included is sql script to create and populate a test database.
 ## Verify ##
 ```
 http://localhost:8080/user-activity-tracker/photo
+http://localhost:8080/user-activity-tracker/track/activity/type?actionId=1&trackId=5
  ``` 
 
 ## Curl *Get* endpoints ##
