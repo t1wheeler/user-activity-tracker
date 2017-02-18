@@ -72,7 +72,7 @@ http://localhost:8080/user-activity-tracker/photo
     Find all activities for a specific photo:           curl "http://localhost:8080/user-activity-tracker/photo/activity/photo?photoId=31"
     Find all "Like" actions for a specific photo:       curl "http://localhost:8080/user-activity-tracker/photo/activity/type?actionId=1&photoId=31"
     Find all "Share" actions for a specific photo:      curl "http://localhost:8080/user-activity-tracker/photo/activity/type?actionId=2&photoId=31"
-    Find all "Comment" actions for a specific photo:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type?action=3&photoId=31"
+    Find all "Comment" actions for a specific photo:    curl "http://localhost:8080/user-activity-tracker/photo/activity/type?actionId=3&photoId=31"
 ```
 
 
@@ -99,9 +99,9 @@ http://localhost:8080/user-activity-tracker/photo
 - Track Endpoints that satisfy the Second Acceptance Criteria, "I should be able to make a GET request with a " type=like" query string to the endpointand have it return only likes (or comments, shares).
 ```
     
-    Find all "Like" actions for a specific track:       curl "http://localhost:8080/user-activity-tracker/track/activity/type?action=1&trackId=5"
-    Find all "Share" actions for a specific track:      curl "http://localhost:8080/user-activity-tracker/track/activity/type?action=2&trackId=5"
-    Find all "Comment" actions for a specific track:    curl "http://localhost:8080/user-activity-tracker/track/activity/type?action=3&trackId=5"
+    Find all "Like" actions for a specific track:       curl "http://localhost:8080/user-activity-tracker/track/activity/type?actionId=1&trackId=5"
+    Find all "Share" actions for a specific track:      curl "http://localhost:8080/user-activity-tracker/track/activity/type?actionId=2&trackId=5"
+    Find all "Comment" actions for a specific track:    curl "http://localhost:8080/user-activity-tracker/track/activity/type?actionId=3&trackId=5"
 ```
 
 
